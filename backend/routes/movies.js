@@ -27,7 +27,7 @@ router.get('/:id', function (req, res) {
             });
         } else {
             res.status(200).json({
-                MovieList: [
+                movies: [
                     {
                         message: 'Movie found',
                         id: id,
@@ -71,10 +71,12 @@ router.post('/', (req, res) => {
                     const actors = data.Actors.split(", ");
                     const poster = data.Poster;
                     const boxOffice = data.BoxOffice;
-                    const rottenTomatoesScore = parseInt(data.Ratings[1].Value.replace('%', ''));
+                    let rottenTomatoesScore;
+                    if (data.Ratings[1])
+                        rottenTomatoesScore = parseInt(data.Ratings[1].Value.replace('%', ''));
+                    else rottenTomatoesScore = "N/A";
 
-                    movies.push(movies.push({
-
+                    movies.push({
                         id: id,
                         movie: movie,
                         yearOfRelease: yearOfRelease,
@@ -83,11 +85,10 @@ router.post('/', (req, res) => {
                         poster: poster,
                         boxOffice: boxOffice,
                         rottenTomatoesScore: rottenTomatoesScore
-
-                    }));
+                    });
 
                     res.status(201).json({
-                        MovieList: [
+                        movies: [
                             {
                                 message: `Movie successfully added to your list ${movie}`,
                                 id: id,

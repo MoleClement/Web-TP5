@@ -1,10 +1,8 @@
 import React, {Component} from "react";
-import axios from 'axios'
 import API_Movie from './API_Movie'
 import FormControl from "react-bootstrap/FormControl";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
-import MovieDetails from "./MovieDetails";
 import MovieList from "./MovieList";
 
 export default class Movie extends Component {
@@ -16,13 +14,14 @@ export default class Movie extends Component {
     }
 
     componentDidMount() {
-        this.getMoviesData();
+        this.getMoviesData()
     }
 
     getMoviesData() {
         let api_movie = new API_Movie();
         api_movie.fetchMovies().then(response => {
-            this.setState({movieList: response.data.MovieList});
+            this.setState({currentMovies: response.data.movies.length});
+            console.log("length: " + response.data.movies.length);
         });
     }
 
@@ -30,30 +29,32 @@ export default class Movie extends Component {
 
         let api_movie = new API_Movie();
         if (this.movieInput.current.value) {
-            api_movie.addMovieByTitle(this.movieInput.current.value);
-            console.log(this.movieInput.current.value);
+            api_movie.addMovieByTitle(this.movieInput.current.value).then(response => {
+                if (response.status === 201)
+                    this.getMoviesData();
+            }).catch(onerror => {
+
+            });
         }
     }
 
     handleClickDelete() {
         let api_movie = new API_Movie();
         api_movie.deleteMovies();
-
     }
 
     handleClickUpdateByRating(idToUpdate, newRating) {
         let api_movie = new API_Movie();
-        api_movie.updateMovieRatingById(idToUpdate, newRating)
+        api_movie.updateMovieRatingById(idToUpdate, newRating);
     }
 
     handleClickDeleteById(idToDelete) {
         let api_movie = new API_Movie();
-        api_movie.deleteMovieById(idToDelete)
+        api_movie.deleteMovieById(idToDelete);
     }
 
     render() {
-
-        if (!this.state.movieList)
+        if (!this.state.currentMovies)
             return (
                 <div className={"container"}>
                     <InputGroup>
@@ -80,16 +81,16 @@ export default class Movie extends Component {
                         <FormControl
                             ref={this.movieInput}
                             type={"text"}
-                            placeholder="Movie to search"
+                            placeholder="Movie to add"
                             aria-label="Movie Title"
                             aria-describedby="movie-title"
                         />
                         <InputGroup.Append>
                             <Button variant={"outline-secondary"} onClick={() => this.handleClickAdd()}
-                                    id="movie-title">Search</Button>
+                                    id="movie-title">Add</Button>
                         </InputGroup.Append>
                     </InputGroup>
-                    <MovieList className={"container"}/>
+                    <MovieList className={"MovieList"} movieIndex={this.state.currentMovies}/>
                 </div>
 
             )

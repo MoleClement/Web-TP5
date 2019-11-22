@@ -2,9 +2,6 @@ let axios = require('axios');
 
 const API_URL = "http://localhost:3000/";
 const API_KEY_MOVIES = "movies";
-const API_KEY_ID = "id=";
-const API_KEY_MOVIE_TITLE = "movieTitle=";
-const API_KEY_MOVIE_RATING = "movieRating=";
 
 class API_Movie {
     constructor() {
@@ -14,6 +11,7 @@ class API_Movie {
 
     // Return all movies
     fetchMovies() {
+        console.log(`${API_URL}${API_KEY_MOVIES}/`);
         return axios
             .get(`${API_URL}${API_KEY_MOVIES}/`);
     }
