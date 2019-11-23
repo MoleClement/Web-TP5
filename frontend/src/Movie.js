@@ -5,6 +5,8 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
 import MovieList from "./MovieList";
 
+import './MovieList.css'
+
 export default class Movie extends Component {
 
     constructor(props) {

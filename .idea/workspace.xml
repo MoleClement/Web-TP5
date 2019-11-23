@@ -3,13 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="06f84334-2296-4d6f-86f5-1383fd102b69" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/movies.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/API_Movie.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/API_Movie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/logo512.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/Movie.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Movie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/MovieDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/MovieDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/MovieList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/MovieList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/MovieList.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/MovieList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,6 +86,7 @@
       <workItem from="1574244785990" duration="16251000" />
       <workItem from="1574327974477" duration="20954000" />
       <workItem from="1574455885106" duration="7973000" />
+      <workItem from="1574507992827" duration="1672000" />
     </task>
     <servers />
   </component>
